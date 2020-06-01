@@ -4,7 +4,7 @@
 
 This repository demonstrates how to configure Cloudflare workers and Cloudflare KV to implement CSRF protection at the edge using antiforgery tokens.
 
-## How it works
+## How it works
 
 1. The user is assigned two cookies on their first GET request by the Cloudflare worker:
 
@@ -19,7 +19,7 @@ This repository demonstrates how to configure Cloudflare workers and Cloudflare 
 
 * We put the token in a header to make sure the token value has only been read by our origin. In older browsers that don't support SameSite fully, they might send the cookie along with any request. By checking a header instead, we can be sure that the request came from our origin because browsers do guarantee that only the cookie's origin can read the cookie value (this is the same origin policy)
 
-## Other protections
+## Other protections
 
 Other mechanisms are available to defend against CSRF, but not all are completely effective:
 
