@@ -1,6 +1,6 @@
 # CSRF protection with Cloudflare workers - an example
 
-> :warning: This repository and the code within it is only for example and offered completely without warrenty. It should not be relied upon for your own implementation. You must review your own implementation and seek input from a security professional
+> :warning: This repository and the code within it is only for example and offered completely without warranty. It should not be relied upon for your own implementation. You must review your own implementation and seek input from a security professional
 
 This repository demonstrates how to configure Cloudflare workers and Cloudflare KV to implement CSRF protection at the edge using antiforgery tokens.
 
