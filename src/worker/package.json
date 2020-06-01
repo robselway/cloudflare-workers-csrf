@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'",
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "preview": "workers-preview < dist/bundle.js"
+  },
+  "author": "Rob Selway",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^1.0.9",
+    "awesome-typescript-loader": "^5.2.1",
+    "prettier": "^1.18.2",
+    "typescript": "^3.9.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "workers-preview": "^1.0.6"
+  },
+  "dependencies": {
+    "@cfworker/uuid": "^1.2.7",
+    "csrf": "^3.1.0"
+  }
+}
