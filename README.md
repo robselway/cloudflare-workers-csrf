@@ -31,3 +31,14 @@ Other mechanisms are available to defend against CSRF, but not all are completel
 
 - **Check the origin header** - is not intended to be relied upon for security
   
+## Performance
+
+Quick manual performance test in Chrome with cache disabled. Measurements taken from network tab in devtools.
+
+| Test                                           |     |     |     |     |    |    |     |     |    |    | Average (ms) | Delta (ms) |
+|------------------------------------------------|-----|-----|-----|-----|----|----|-----|-----|----|----|--------------|------------|
+| GET with worker disabled                       | 39  | 41  | 40  | 41  | 33 | 35 | 41  | 45  | 34 | 29 | 37.8         |            |
+| GET for new users (setting cookies)            | 101 | 92  | 85  | 79  | 96 | 84 | 78  | 106 | 73 | 81 | 87.5         | +49.7      |
+| GET for existing user (checking cookie exists) | 52  | 53  | 45  | 80  | 57 | 53 | 39  | 92  | 37 | 40 | 54.8         | +17        |
+| POST with worker disabled                      | 123 | 133 | 88  | 59  | 46 | 58 | 145 | 45  | 45 | 37 | 77.9         |            |
+| POST verifying cookie                          | 63  | 174 | 175 | 163 | 59 | 64 | 151 | 64  | 95 | 62 | 107          | +29.1      |
